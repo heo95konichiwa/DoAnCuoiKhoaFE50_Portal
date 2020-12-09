@@ -1,0 +1,13 @@
+{
+    "label_login": "Đăng nhập",
+    "label_login_title_page": "Đăng nhập vào hệ thống",
+    "label_login_summary_content": "Đăng nhập vào tài khoản của bạn",
+    "label_login_username": "Tên đăng nhập",
+    "label_login_password": "Mật khẩu",
+    "label_login_password_lost": "Quên mật khẩu?",
+    "label_login_description": "Bạn đang sử dụng hệ thống quản lý của ENSCore Software. Nếu có lỗi trong quá trình đăng nhập vào hệ thống vui lòng liên hệ với bộ phận kỹ thuật của chúng tôi.",
+    "label_login_contact_now": "Liên hệ ngay!",
+    "label_login_error_mode": "Tài khoản của bạn không có quyền truy cập!",
+    "label_login_error_false": "Sai tên đăng nhập hoặc mật khẩu!",
+    "label_login_error_empty": "Tên đăng nhập hoặc mật khẩu không được để trống!"
+}

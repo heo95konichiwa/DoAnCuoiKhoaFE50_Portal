@@ -1,0 +1,13 @@
+{
+    "label_login": "Login",
+    "label_login_title_page": "Login to system",
+    "label_login_summary_content": "Sign in to your account",
+    "label_login_username": "Username",
+    "label_login_password": "Password",
+    "label_login_password_lost": "Forgot password?",
+    "label_login_description": "You are using the management system of ENSCore Software. If there is an error logging into the system please contact our technical department.",
+    "label_login_contact_now": "Contact now!",
+    "label_login_error_mode": "Your account does not have access!",
+    "label_login_error_false": "Wrong username or password!",
+    "label_login_error_empty": "Username or password can not be empty!"
+}

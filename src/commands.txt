@@ -1,0 +1,26 @@
+
+// import react router dom
+npm i react-router-dom
+
+// import sass
+npm i -D sass
+
+// import i18next - multi language
+npm i i18next i18next-xhr-backend react-i18next -S
+
+// import bootstrap
+npm i react-bootstrap bootstrap
+npm i bootstrap jquery
+npm i popper.js --save
+
+// import cookie
+npm i universal-cookie
+npm i react-cookie
+
+// import react-redux
+npm i redux
+npm i react-redux
+npm i redux-thunk
+
+//import axios
+npm i axios
