@@ -1,0 +1,115 @@
+.hd {
+    &-menu {
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        height: 55px;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 15px;
+        padding-right: 15px;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            padding: 0px 10px;
+            text-decoration: none;
+        }
+    }
+    &-logo {
+        width: 160px;
+        text-align: left;
+        img {
+            width: 110px;
+        }
+    }
+    &-nav {
+        &-sub {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            right: 0px;
+            border-radius: 3px;
+            min-width: 180px;
+            transition: all 0.4s ease-in-out;
+            transform: translateX(200px);
+            &.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
+            }
+            a,
+            .hd-sub-item {
+                display: block;
+                text-align: left;
+                padding: 8px 20px;
+                cursor: pointer;
+            }
+            i {
+                margin-right: 8px;
+            }
+        }
+        &-group {
+            padding: 8px 20px;
+            font-weight: 500;
+            text-align: left;
+        }
+    }
+    &-toggler-icon {
+        min-width: 50px;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    &-user-setting {
+        text-align: right;
+        img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+    }
+    &-avatar {
+        width: 100%;
+        position: relative;
+        &-src {
+            cursor: pointer;
+        }
+    }
+}
+@media (min-width: 200px) {
+    .hd {
+        &-menu {
+            justify-content: space-between;
+        }
+        &-nav {
+            display: none;
+        }
+        &-logo {
+            order: 1;
+        }
+        &-user-setting {
+            order: 2;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .hd {
+        &-user-setting {
+            flex-grow: 1;
+        }
+        &-logo, 
+        &-user-setting {
+            order: initial;
+        }
+        &-nav {
+            display: flex;
+        }
+    }
+}

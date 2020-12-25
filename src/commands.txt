@@ -1,0 +1,37 @@
+
+// import react router dom
+npm i react-router-dom
+
+// import sass
+npm i -D sass
+
+// import i18next - multi language
+npm i i18next i18next-xhr-backend react-i18next -S
+
+// import bootstrap
+npm i bootstrap
+npm i datatables.net-bs4
+npm i react-bootstrap bootstrap
+npm i bootstrap jquery
+npm i popper.js --save
+
+// import cookie
+npm i universal-cookie
+npm i react-cookie
+
+// import react-redux
+npm i redux
+npm i react-redux
+npm i redux-thunk
+
+//import axios
+npm i axios
+
+// import ckeditor
+npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
+
+// import datatable
+npm i mdbreact
+
+// import pagination
+npm install react-js-pagination

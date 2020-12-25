@@ -1,0 +1,16 @@
+{
+    "label_users_name": "Users name",
+    "label_users_full_name": "Full name",
+    "label_users_add_new_users": "Add users",
+    "label_users_name_input": "Enter the users name",
+    "label_users_email_input": "Enter email address",
+    "label_users_password": "Password",
+    "label_users_password_input": "Enter password",
+    "label_users_phone_number": "Phone number",
+    "label_users_phone_number_input": "Enter phone number",
+    "label_users_type": "Account type",
+    "label_users_add_new_user": "Add user",
+    "label_users_user_exists": "This account already exists in the system",
+    "label_users_password_repeat": "Confirm password",
+    "label_users_password_input_repeat": "Re-enter password"
+}
