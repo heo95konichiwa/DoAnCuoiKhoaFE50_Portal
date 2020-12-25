@@ -1,21 +1,34 @@
-import React, { useState } from 'react'
-import '../../assets/css/login.scss'
+import React, { useEffect, useState } from 'react'
+import './login.scss'
 import LanguageSelector from '../../LanguageSelector'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from "react-redux"
 import { LoginRequest } from "../../services/users"
 import { useHistory } from "react-router-dom"
+import Cookies from 'universal-cookie'
 
 const Login = () => {
     const { t, i18n } = useTranslation();
     const dispatch = useDispatch();
     const history = useHistory();
     document.title = t('login:label_login_title_page');
+    const cookies = new Cookies();
 
     const [user, setUser] = useState({
         taiKhoan: "",
         matKhau: "",
     });
+    let [darkLight, changeDarkLight] = useState();
+
+    changeDarkLight = () => {
+        darkLight = cookies.get('darkmode') || 'dark';
+        cookies.set('darkmode', darkLight, { path: '/' });
+        document.querySelector('[rel="js-dark-light-mode"]').classList.add(darkLight);
+    }
+
+    const loadDarkLightMode = () => {
+        changeDarkLight();
+    }
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -33,6 +46,9 @@ const Login = () => {
         }
         dispatch(LoginRequest(user, history));
     }
+    useEffect(function () {
+        loadDarkLightMode();
+    }, [darkLight]);
 
     return (
         <div className="login">

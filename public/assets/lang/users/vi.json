@@ -1,0 +1,17 @@
+{
+    "label_users_name": "Tên đăng nhập",
+    "label_users_full_name": "Họ tên",
+    "label_users_add_new_users": "Thêm tài khoản",
+    "label_users_user_input": "Nhập tên đăng nhập",
+    "label_users_name_input": "Nhập tên tài khoản",
+    "label_users_email_input": "Nhập địa chỉ Email",
+    "label_users_password": "Mật khẩu",
+    "label_users_password_input": "Nhập mật khẩu",
+    "label_users_phone_number": "Số điện thoại",
+    "label_users_phone_number_input": "Nhập số điện thoại",
+    "label_users_type": "Loại tài khoản",
+    "label_users_add_new_user": "Thêm tài khoản",
+    "label_users_user_exists": "Tài khoản này đã tồn tại trong hệ thống",
+    "label_users_password_repeat": "Xác nhận mật khẩu",
+    "label_users_password_input_repeat": "Nhập lại mật khẩu"
+}

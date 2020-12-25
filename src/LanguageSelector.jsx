@@ -30,10 +30,6 @@ const LanguageSelector = () => {
         handleDetectLanguage(languageDefault);
     }
     
-    // useEffect(function () {
-    //     loadLanguage();
-    // }, []);
-    
     useEffect(function () {
         loadLanguage();
     }, [languageDefault]);

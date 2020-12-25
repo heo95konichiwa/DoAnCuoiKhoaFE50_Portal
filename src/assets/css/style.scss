@@ -1,0 +1,232 @@
+body {
+    font-family: "OpenSansWeb", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.container-fluid {
+    padding: 24px;
+}
+
+.scrollbar-y-custom {
+    max-height: 450px;
+    overflow-y: auto;
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+    }
+}
+
+.btn-fu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90px;
+    padding: 3px;
+    border: none !important;
+}
+.contain-main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin-top: 55px;
+}
+
+.right-main {
+    margin-left: 220px;
+    flex: 1;
+    transition: all 0.4s ease-in-out;
+    &.full {
+        margin-left: 0;
+    }
+}
+
+.breadcrumb {
+    border-radius: 0;
+    margin-bottom: 0;
+    li:not(:first-child) {
+        padding-left: 8px;
+        &:before {
+            content: "/";
+            display: inline-block;
+            padding-right: 8px;
+        }
+    }
+}
+
+.block {
+    &-default {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+    }
+    &-header {
+        padding: 12px 20px;
+        i {
+            margin-right: 8px;
+            display: inline-block;
+            font-size: 14px;
+            width: 18px;
+            text-align: center;
+        }
+    }
+    &-body {
+        flex: 1 1 auto;
+        padding: 15px;
+    }
+    &-actions {
+        &-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
+.search-input {
+    width: 200px;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.table {
+    &-default {
+        th {
+            &:first-child {
+                width: 32px;
+                text-align: center;
+            }
+        }
+        td {
+            padding: 5px 12px;
+            vertical-align: middle;
+            &:first-child {
+                width: 32px;
+                text-align: center;
+            }
+        }
+        .btn {
+            font-size: 14px;
+            padding: 3px 5px;
+            margin-right: 5px;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+}
+.btn-groups {
+    margin-bottom: 15px;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98);
+    transition: all .3s ease-in-out;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    &-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .card {
+        width: 70%;
+        &-header {
+            text-transform: capitalize;
+            i {
+                margin-right: 8px;
+            }
+        }
+        &-body {
+            padding: 20px;
+            max-height: 500px;
+        }
+    }
+
+    .form {
+        &-control {
+            height: 42px;
+            font-size: 14px;
+            &::placeholder {
+                color: #e4e7ea;
+            }
+            &.custom-editor {
+                padding: 12px;
+            }
+        }
+        &-actions {
+            text-align: center;
+            .btn {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.ck-editor__editable_inline {
+    min-height: 300px;
+    color: #23282c;
+}
+.input-group-text {
+    font-size: 0.875rem;
+}
+.text-error {
+    font-size: 13px;
+    height: 40px;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.close {
+    text-shadow: none;
+    opacity: 1;
+    font-size: 19px;
+    &:not(:disabled):not(.disabled) {
+        &:focus,
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border-bottom: none;
+    margin-top: 1px;
+}
+
+.tab-content {
+    padding: 15px;
+    padding-bottom: 0px;
+    border-top: none !important;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 922px) {
+    .popup {
+        .card {
+            &-body {
+                max-height: 700px;
+            }
+        }
+    }
+}

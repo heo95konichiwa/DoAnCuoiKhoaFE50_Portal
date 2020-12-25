@@ -1,10 +1,10 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import LichChieuNgayMai from '../../components/lichchieu'
+import QLDanhSachPhim from '../../components/danhsachphim'
 import Header from '../../parts/header'
 import SidebarLeft from '../../parts/sidebar'
 
-const BanLamViec = () => {
+const DanhSachPhim = () => {
     const { t, i18n } = useTranslation();
     document.title = t('dashboard:label_dashboard_title_page');
 
@@ -15,11 +15,12 @@ const BanLamViec = () => {
                 <SidebarLeft />
                 <div className={`right-main ${window.innerWidth < 922 ? 'full' : ''}`} rel="js-right-main">
                     <ul className="breadcrumb">
-                        <li>Bàn làm việc</li>
-                    </ul>
+                    <li><a href="/ban-lam-viec">{t('global:label_global_dashboard')}</a></li>
+                    <li>{t('global:label_global_movie_list')}</li>
+                </ul>
                     <div className="container-fluid">
                         <div className="row">
-                            <LichChieuNgayMai />
+                            <QLDanhSachPhim />
                         </div>
                     </div>
                 </div>
@@ -28,4 +29,4 @@ const BanLamViec = () => {
     )
 }
 
-export default BanLamViec
+export default DanhSachPhim
