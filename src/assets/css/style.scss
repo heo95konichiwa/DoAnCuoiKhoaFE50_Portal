@@ -21,13 +21,21 @@ body {
     }
 }
 
-.btn-fu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 90px;
-    padding: 3px;
-    border: none !important;
+.btn {
+    &-fu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        padding: 3px;
+        border: none !important;
+    }
+    &-update {
+        display: none;
+    }
+    &-groups {
+        margin-bottom: 15px;
+    }
 }
 .contain-main {
     display: flex;
@@ -85,6 +93,10 @@ body {
             flex-wrap: wrap;
             justify-content: space-between;
         }
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
 .search-input {
@@ -96,6 +108,7 @@ body {
 .table {
     &-default {
         th {
+            text-transform: capitalize;
             &:first-child {
                 width: 32px;
                 text-align: center;
@@ -109,21 +122,70 @@ body {
                 text-align: center;
             }
         }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
         .btn {
             font-size: 14px;
             padding: 3px 5px;
             margin-right: 5px;
         }
-
-        img {
-            width: 50px;
+    }
+    &-sort {
+        position: relative;
+        cursor: pointer;
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: 0.9em;
+            display: block;
+            opacity: 0.3;
+        }
+        &::before {
+            content: "\2191";
+            right: 1em;
+        }
+        &::after {
+            content: "\2193";
+            right: 0.5em;
+        }
+        &-asc {
+            &::before {
+                opacity: 1;
+            }
+        }
+        &-desc {
+            &::after {
+                opacity: 1;
+            }
         }
     }
 }
-.btn-groups {
-    margin-bottom: 15px;
+.show-per-page {
+    select {
+        width: 50px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 3px;
+        outline: none;
+    }
 }
-
+.pagination {
+    a {
+        position: relative;
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        line-height: 32px;
+        text-decoration: none;
+        text-align: center;
+    }
+    li:not(:last-child) a {
+        border-right: none !important;
+    }
+}
 .popup {
     width: 100%;
     height: 100%;
@@ -135,11 +197,25 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: scale(0.98);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &.active {
         opacity: 1;
         visibility: visible;
         transform: scale(1);
+    }
+    &-update {
+        .btn {
+            &-insert {
+                display: none;
+            }
+            &-update {
+                display: inline;
+            }
+        }
+        &-not-change {
+            pointer-events: none;
+            opacity: 0.3;
+        }
     }
 
     &-body {

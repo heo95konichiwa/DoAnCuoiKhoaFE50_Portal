@@ -6,7 +6,7 @@ import SidebarLeft from '../../parts/sidebar'
 
 const DanhSachPhim = () => {
     const { t, i18n } = useTranslation();
-    document.title = t('dashboard:label_dashboard_title_page');
+    document.title = t('global:label_global_movie_list');
 
     return (
         <div className="mainpage-main">

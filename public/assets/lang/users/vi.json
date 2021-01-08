@@ -13,5 +13,6 @@
     "label_users_add_new_user": "Thêm tài khoản",
     "label_users_user_exists": "Tài khoản này đã tồn tại trong hệ thống",
     "label_users_password_repeat": "Xác nhận mật khẩu",
-    "label_users_password_input_repeat": "Nhập lại mật khẩu"
+    "label_users_password_input_repeat": "Nhập lại mật khẩu",
+    "label_users_delete_confirm": "Bạn có chắc chắn xóa tài khoản"
 }

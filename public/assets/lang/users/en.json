@@ -12,5 +12,6 @@
     "label_users_add_new_user": "Add user",
     "label_users_user_exists": "This account already exists in the system",
     "label_users_password_repeat": "Confirm password",
-    "label_users_password_input_repeat": "Re-enter password"
+    "label_users_password_input_repeat": "Re-enter password",
+    "label_users_delete_confirm": "Are you sure you delete"
 }

@@ -22,9 +22,27 @@ export function setMinDate() {
     } 
     if (mm < 10) {
         mm = '0' + mm
-    } 
+    }
 
     return today = yyyy + '-' + mm + '-' + dd;
+}
+
+export function setDate(date) {
+    if (date) {
+        let today = new Date();
+        if(date.indexOf('T') > 0) {
+            const d = date.split('T');
+            today = d[0];
+            return today;
+        }
+        else {
+            const d = date.split('/');
+            let dd = d[0]; let mm = d[1]; let yyyy = d[2];
+            today = yyyy + '-' + mm + '-' + dd;
+            return today;
+        }
+    }
+    return '';
 }
 
 export function showPopup() {
@@ -32,7 +50,19 @@ export function showPopup() {
 }
 
 export function closePopup() {
-    document.querySelector('[rel="js-popup"]').classList.remove('active');
+    const content = document.querySelector('[rel="js-popup"]');
+    content.classList.remove('active');
+    if (content.classList.contains('popup-update')) content.classList.remove('popup-update');
+    document.querySelectorAll('[rel="js-popup-update-not-change"]').forEach(el => {
+        el.classList.remove('popup-update-not-change');
+    });
+}
+
+export function convertToLocaleDateString(time, lang) {
+    const convertDate = new Date(time);
+    const locationLang = (lang === 'en') ? 'en-US' : 'vi-VN';
+    const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
+    return convertDate.toLocaleDateString(locationLang, options)
 }
 
 function nonAccentVietnamese(str) {

@@ -16,7 +16,7 @@ const TaiKhoan = () => {
                 <div className={`right-main ${window.innerWidth < 922 ? 'full' : ''}`} rel="js-right-main">
                     <ul className="breadcrumb">
                     <li><a href="/ban-lam-viec">{t('global:label_global_dashboard')}</a></li>
-                    <li>{t('global:label_global_movie_list')}</li>
+                    <li>{t('global:label_global_user_list')}</li>
                 </ul>
                     <div className="container-fluid">
                         <div className="row">
