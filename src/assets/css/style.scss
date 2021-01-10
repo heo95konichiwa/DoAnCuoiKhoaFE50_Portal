@@ -99,10 +99,13 @@ body {
         }
     }
 }
-.search-input {
-    width: 200px;
-    display: inline-block;
-    margin-left: 15px;
+.search {
+    margin-bottom: 15px;
+    &-input {
+        width: 200px;
+        display: inline-block;
+        margin-left: 15px;
+    }
 }
 
 .table {

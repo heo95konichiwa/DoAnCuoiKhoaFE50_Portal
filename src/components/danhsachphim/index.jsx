@@ -47,7 +47,7 @@ const QLDanhSachPhim = () => {
             }
         }
         await fetchData();
-    }, [searchKey, totalPerPage, totalPages, activePage, totalCount, setRequestData, setData]);
+    }, [searchKey, totalPerPage, totalPages, activePage, totalCount, requestData, setData]);
 
     return (
         <Fragment>

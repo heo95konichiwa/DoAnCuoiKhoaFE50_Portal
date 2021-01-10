@@ -24,28 +24,34 @@ const SidebarLeft = () => {
                         <i className="icon-user" />{t('global:label_global_user_list')}
                     </NavLink>
                 </li>
+                <li className="left-nav-title">{t('global:label_global_showtimes_management')}</li>
+                <li className="left-nav-item">
+                    <NavLink exact activeClassName={'active'} to='/quan-ly-lich-chieu'>
+                        <i className="icon-user" />{t('global:label_global_showtimes_list')}
+                    </NavLink>
+                </li>
                 <li className="left-nav-title">{t('global:label_global_movie_management')}</li>
                 <li className="left-nav-item">
                     <NavLink exact activeClassName={'active'} to='/danh-sach-phim'>
                         <i className="icon-list" />{t('global:label_global_movie_list')}
                     </NavLink>
                 </li>
-                <li className="left-nav-item">
+                {/* <li className="left-nav-item">
                     <NavLink exact activeClassName={'active'} to='/thong-tin-phim'>
                         <i className="icon-info" />{t('global:label_global_movie_infor')}
                     </NavLink>
-                </li>
+                </li> */}
                 <li className="left-nav-title">{t('global:label_global_cinema_management')}</li>
                 <li className="left-nav-item">
                     <NavLink exact activeClassName={'active'} to='/he-thong-rap'>
                         <i className="icon-grid" />{t('global:label_global_cinema_system')}
                     </NavLink>
                 </li>
-                <li className="left-nav-item">
-                    <NavLink exact activeClassName={'active'} to='/lich-chieu'>
-                        <i className="icon-clock" />{t('global:label_global_cinema_showtimes')}
+                {/* <li className="left-nav-item">
+                    <NavLink exact activeClassName={'active'} to='/he-thong-cum-rap'>
+                        <i className="icon-list" />{t('global:label_global_cinema_system_cluster')}
                     </NavLink>
-                </li>
+                </li> */}
                 <li className="left-nav-title">{t('global:label_global_ticket_management')}</li>
                 <li className="left-nav-item">
                     <NavLink exact activeClassName={'active'} to='/danh-sach-phong-ve'>
