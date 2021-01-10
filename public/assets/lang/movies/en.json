@@ -4,5 +4,7 @@
     "label_movie_name_input": "Enter the movie name",
     "label_movie_date": "Movie date",
     "label_movie_link_trailer": "Link trailer",
-    "label_movie_link_trailer_input": "Enter the link trailer"
+    "label_movie_link_trailer_input": "Enter the link trailer",
+    "label_movie_movie_exists": "This movie already exists in the system",
+    "label_movie_delete_confirm": "Are you sure you delete"
 }

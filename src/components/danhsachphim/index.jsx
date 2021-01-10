@@ -1,86 +1,89 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Cookies from 'universal-cookie'
-import { GetMovieList } from '../../services/movie'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import * as utils from '../../utils/index'
 import InsertUpdateForm from '../../pages/danhsachphim/InsertUpdateForm'
+import DanhSachPhim from '../../pages/danhsachphim/DanhSachPhim'
+import Axios from 'axios'
+import Pagination from "react-js-pagination"
+import { useDispatch } from 'react-redux'
+import { getDataListSuccess } from '../../services/movie'
 
 const QLDanhSachPhim = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
+    const [data, setData] = useState();
     const dispatch = useDispatch();
-    const dataList = useSelector((state) => state.movie.movieList);
-    const cookies = new Cookies();
+    const [searchKey, setSearchKey] = useState();
 
-    const convertToLocaleDateString = (time) => {
-        const convertDate = new Date(time);
-        const getLang = cookies.get('language');
-        const locationLang = (getLang === 'en') ? 'en-US' : 'vi-VN';
-        const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-        return convertDate.toLocaleDateString(locationLang, options)
-    }
+    let [totalPerPage = 12, setTotalPerPage] = useState();
+    let [totalPages = 1, setTotalPages] = useState();
+    let [activePage = 1, setCurrentPage] = useState();
+    let [totalCount = 1, setTotalCount] = useState();
+    const [requestData, setRequestData] = useState(new Date());
 
-    useEffect(() => {
-        dispatch(GetMovieList());
-    }, []);
-
-    useEffect(() => {
-        dispatch(GetMovieList());
-    }, [dispatch]);
-
-
-    const renderData = () => {
-        return dataList?.map((item, index) => {
-            return (
-                <tr key={index}>
-                    <td className="table-item">{item.maPhim}</td>
-                    <td className="table-item">{item.tenPhim}</td>
-                    <td className="table-item table-item-image">{<img src={item.hinhAnh} alt={item.tenPhim} />}</td>
-                    <td className="table-item">{convertToLocaleDateString(item.ngayKhoiChieu)}</td>
-                    <td className="table-item">{item.biDanh}</td>
-                    <td className="table-item">
-                        <button className="btn btn-info"><i className="icon-eye"></i> {t('global:label_global_view')}</button>
-                        <button className="btn btn-success"><i className="icon-pencil"></i> {t('global:label_global_edit')}</button>
-                        <button className="btn btn-danger"><i className="icon-trash"></i> {t('global:label_global_delete')}</button>
-                    </td>
-                </tr>
-            )
+    const handleInsertData = () => {
+        document.querySelectorAll('[rel="js-popup"] input').forEach(el => {
+            el.value = '';
         })
+        utils.showPopup();
     }
+
+    useEffect(async () => {
+        const fetchData = async () => {
+            let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP05`;
+            if (searchKey) url += `&tenPhim=${searchKey}`;
+            if (activePage) url += `&soTrang=${activePage}`;
+            if (totalPerPage) url += `&soPhanTuTrenTrang=${totalPerPage}`;
+            try {
+                const res = await Axios.get(url);
+                if (res.status === 200 || res.status === 201) {
+                    dispatch(getDataListSuccess(res.data));
+                    setData(res.data.items);
+                    setTotalPages(res.data.totalPages);
+                    setTotalCount(res.data.totalCount);
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+        await fetchData();
+    }, [searchKey, totalPerPage, totalPages, activePage, totalCount, requestData, setData]);
 
     return (
-        <>
+        <Fragment>
             <div className="col-12">
                 <div className="block-default">
                     <div className="block-header">
                         <i className="icon-grid" /> {t('global:label_global_movie_list')}
                     </div>
                     <div className="block-body">
-                        <div id="ContentMain_ctl00_UpdatePanel1">
+                        <div className="block-actions-top">
                             <div className="btn-groups">
-                                <button className="btn btn-success" onClick={utils.showPopup}><i className="icon-plus" /> {t('global:label_global_add')}</button>
+                                <button className="btn btn-success" onClick={handleInsertData}><i className="icon-plus" /> {t('global:label_global_add')}</button>
                             </div>
-                            <table className="table table-default">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>{t('movies:label_movie_name')}</th>
-                                        <th>{t('global:label_global_image')}</th>
-                                        <th>{t('movies:label_movie_date')}</th>
-                                        <th>Link SEO</th>
-                                        <th>{t('global:label_global_actions')}</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {renderData()}
-                                </tbody>
-                            </table>
+                            <div className="search">
+                                {t('global:label_global_search')}
+                                <input className="form-control search-input" type="text" placeholder={t('global:label_global_enter_keyword')} onChange={e => setSearchKey(e.target.value)} />
+                            </div>
+                        </div>
+                        <DanhSachPhim props={data} setRequestData={setRequestData} />
+                        <div className="block-actions-bottom">
+                            <div className="show-per-page">{t('global:label_global_show')}
+                                <select onChange={e => {setTotalPerPage(e.target.value); setCurrentPage(1)}}>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="48">48</option>
+                                    <option value="96">96</option>
+                                </select>
+                            </div>
+                            <Pagination activePage={activePage} itemsCountPerPage={parseInt(totalPerPage)} totalItemsCount={totalCount} pageRangeDisplayed={totalPages} onChange={setCurrentPage} />
                         </div>
                     </div>
                 </div>
             </div>
-            <InsertUpdateForm />
-        </>
+            <InsertUpdateForm props={data} setRequestData={setRequestData} />
+            {/* <InsertUpdateFormOld /> */}
+        </Fragment>
     )
 }
 

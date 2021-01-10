@@ -4,5 +4,7 @@
     "label_movie_name_input": "Nhập tên phim",
     "label_movie_date": "Ngày chiếu",
     "label_movie_link_trailer": "Link trailer",
-    "label_movie_link_trailer_input": "Nhập link trailer"
+    "label_movie_link_trailer_input": "Nhập link trailer",
+    "label_movie_movie_exists": "Bộ phim này đã tồn tại trong hệ thống",
+    "label_movie_delete_confirm": "Bạn có chắc chắn xóa bộ phim"
 }

@@ -83,13 +83,27 @@ a {
     .table {
         &-default {
             border: 1px solid #23282c;
+            tbody {
+                tr {
+                    &:nth-child(2n) {
+                        background-color: #343b41;
+                    }
+                }
+            }
             th {
-                background-color: #343b41;
+                background-color: #2f353a;
                 border: 1px solid #23282c;
             }
             td {
                 border: 1px solid #23282c;
             }
+        }
+    }
+    .show-per-page {
+        select {
+            color: #3a4149;
+            background-color: #ffffff;
+            border: 1px solid #23282c;
         }
     }
     .pagination {
@@ -99,7 +113,8 @@ a {
             border: 1px solid #23282c;
         }
         span,
-        a:hover {
+        a:hover,
+        .active a {
             color: #e4e7ea;
             background-color: #2f353a;
             border: 1px solid #23282c;
