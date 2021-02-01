@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React,{useEffect,useState} from 'react'
 import { useTranslation } from 'react-i18next';
 import Header from '../../parts/header';
 import SidebarLeft from '../../parts/sidebar';
 import {connect,useDispatch} from 'react-redux';
 import { getCinemaSystem, getLocationMovie, getMovieListAdminShowtime,postShowTime } from '../../services/showtimes';
 
-const Lichchieu = (props) => {
+const Lichchieu1 = (props) => {
     const { t, i18n } = useTranslation();
     document.title = t('global:label_global_cinema_system');
     const dispatch = useDispatch();
@@ -163,4 +163,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Lichchieu);
+export default connect(mapStateToProps)(Lichchieu1);

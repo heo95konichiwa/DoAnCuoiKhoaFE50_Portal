@@ -45,6 +45,17 @@ export function setDate(date) {
     return '';
 }
 
+export function ConvertDateDMY(date) {
+    if (date) {
+        let today = new Date();
+        const d = date.split('-');
+        let dd = d[2]; let mm = d[1]; let yyyy = d[0];
+        today = dd + '/' + mm + '/' + yyyy;
+        return today;
+    }
+    return '';
+}
+
 export function showPopup() {
     document.querySelector('[rel="js-popup"]').classList.add('active');
 }

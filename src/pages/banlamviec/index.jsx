@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import LichChieuNgayMai from '../../components/lichchieu'
+// import LichChieuNgayMai from '../../components/lichchieu/index'
 import Header from '../../parts/header'
 import SidebarLeft from '../../parts/sidebar'
 
@@ -15,11 +15,11 @@ const BanLamViec = () => {
                 <SidebarLeft />
                 <div className={`right-main ${window.innerWidth < 922 ? 'full' : ''}`} rel="js-right-main">
                     <ul className="breadcrumb">
-                        <li>Bàn làm việc</li>
+                        <li>{t('global:label_global_dashboard')}</li>
                     </ul>
                     <div className="container-fluid">
                         <div className="row">
-                            <LichChieuNgayMai />
+                            {/* <LichChieuNgayMai /> */}
                         </div>
                     </div>
                 </div>

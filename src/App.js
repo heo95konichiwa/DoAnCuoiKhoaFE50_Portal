@@ -6,6 +6,7 @@ import Login from './pages/login'
 import BanLamViec from './pages/banlamviec'
 import DanhSachPhim from './pages/danhsachphim'
 import HeThongRap from './pages/hethongrap'
+import LichChieu from './pages/lichchieu/index'
 import DanhSachTaiKhoan from './pages/taikhoan'
 import Lichchieu from './pages/lichchieu'
 
@@ -19,13 +20,13 @@ function App() {
               </Route>
               <PrivateRoute exact path="/ban-lam-viec" component={BanLamViec}>
               </PrivateRoute>
+              <PrivateRoute exact path="/danh-sach-tai-khoan" component={DanhSachTaiKhoan}>
+              </PrivateRoute>
               <PrivateRoute exact path="/danh-sach-phim" component={DanhSachPhim}>
               </PrivateRoute>
               <PrivateRoute exact path="/he-thong-rap" component={HeThongRap}>
               </PrivateRoute>
-              <PrivateRoute exact path="/danh-sach-tai-khoan" component={DanhSachTaiKhoan}>
-              </PrivateRoute>
-              <PrivateRoute exact path="/quan-ly-lich-chieu" component={Lichchieu}>
+              <PrivateRoute exact path="/lich-chieu" component={LichChieu}>
               </PrivateRoute>
               <Route exact path="/" component={Login}>
                 <Redirect to="/dang-nhap"></Redirect>
