@@ -1,0 +1,12 @@
+{
+    "label_cinema_id": "ID cinema",
+    "label_cinema_name": "Cinema name",
+    "label_cinema_choose_movie": "Choose movie",
+    "label_cinema_choose_system": "Choose system cluster",
+    "label_cinema_choose_cluster": "Choose cluster",
+    "label_cinema_choose_cinema": "Choose cinema",
+    "label_cinema_input_date": "Enter movie show date",
+    "label_cinema_input_time": "Enter movie showtimes",
+    "label_cinema_input_price": "Enter price ticket",
+    "label_cinema_create": "Create showtimes"
+}

@@ -1,13 +1,13 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
-// import LichChieuNgayMai from '../../components/lichchieu/index'
-import Header from '../../parts/header'
-import SidebarLeft from '../../parts/sidebar'
+import { useTranslation } from 'react-i18next';
+import Header from '../../parts/header';
+import SidebarLeft from '../../parts/sidebar';
+import {connect,useDispatch} from 'react-redux';
+import QLLichChieu from '../../components/lichchieu';
 
-const BanLamViec = () => {
+const LichChieu = () => {
     const { t, i18n } = useTranslation();
-    document.title = t('dashboard:label_dashboard_title_page');
-
+    document.title = t('global:label_global_cinema_showtimes');
     return (
         <div className="mainpage-main">
             <Header />
@@ -15,11 +15,12 @@ const BanLamViec = () => {
                 <SidebarLeft />
                 <div className={`right-main ${window.innerWidth < 922 ? 'full' : ''}`} rel="js-right-main">
                     <ul className="breadcrumb">
-                        <li>{t('global:label_global_dashboard')}</li>
-                    </ul>
+                    <li><a href="/ban-lam-viec">{t('global:label_global_dashboard')}</a></li>
+                    <li>{t('global:label_global_cinema_showtimes')}</li>
+                </ul>
                     <div className="container-fluid">
                         <div className="row">
-                            {/* <LichChieuNgayMai /> */}
+                            <QLLichChieu />
                         </div>
                     </div>
                 </div>
@@ -28,4 +29,4 @@ const BanLamViec = () => {
     )
 }
 
-export default BanLamViec
+export default LichChieu

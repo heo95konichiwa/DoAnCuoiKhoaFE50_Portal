@@ -14,7 +14,7 @@ i18n
     },
     fallbackLng: cookiesLanguage.get('language') || 'vi',
     //debug: true,
-    ns: ['global', 'login', 'users', 'dashboard', 'movies'],
+    ns: ['global', 'login', 'users', 'dashboard', 'movies', 'cinema'],
     defaultNS: 'global',
     keySeparator: false,
     interpolation: {

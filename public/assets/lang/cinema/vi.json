@@ -1,0 +1,12 @@
+{
+    "label_cinema_id": "Mã rạp",
+    "label_cinema_name": "Tên rạp",
+    "label_cinema_choose_movie": "Chọn phim",
+    "label_cinema_choose_system": "Chọn hệ thống rạp",
+    "label_cinema_choose_cluster": "Chọn cụm rạp",
+    "label_cinema_choose_cinema": "Chọn rạp",
+    "label_cinema_input_date": "Nhập ngày chiếu",
+    "label_cinema_input_time": "Nhập giờ chiếu",
+    "label_cinema_input_price": "Nhập giá vé",
+    "label_cinema_create": "Tạo lịch chiếu"
+}
