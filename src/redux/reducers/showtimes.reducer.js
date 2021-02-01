@@ -1,5 +1,6 @@
 const initialState = {
     movieList: [],
+    movieInforShowtime:null,
     cinemaSystem:null,
     listTheater:null
   };
@@ -17,6 +18,9 @@ const initialState = {
       case 'GET-LOCATION-MOVIE-ADMIN': {
         return {...state,listTheater:payload};
     }
+      case 'GET-INFOR-MOVIE-SHOWTIME': {
+        return {...state,movieInforShowtime:payload};
+      }
       default:
         return state;
     }

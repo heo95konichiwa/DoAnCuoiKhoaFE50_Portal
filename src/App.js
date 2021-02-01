@@ -6,9 +6,8 @@ import Login from './pages/login'
 import BanLamViec from './pages/banlamviec'
 import DanhSachPhim from './pages/danhsachphim'
 import HeThongRap from './pages/hethongrap'
-import LichChieu from './pages/lichchieu/index'
+import Lichchieu from './pages/lichchieu/index'
 import DanhSachTaiKhoan from './pages/taikhoan'
-import Lichchieu from './pages/lichchieu'
 
 function App() {
   return (
@@ -26,7 +25,7 @@ function App() {
               </PrivateRoute>
               <PrivateRoute exact path="/he-thong-rap" component={HeThongRap}>
               </PrivateRoute>
-              <PrivateRoute exact path="/lich-chieu" component={LichChieu}>
+              <PrivateRoute exact path="/quan-ly-lich-chieu" component={Lichchieu}>
               </PrivateRoute>
               <Route exact path="/" component={Login}>
                 <Redirect to="/dang-nhap"></Redirect>
