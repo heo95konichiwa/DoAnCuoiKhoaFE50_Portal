@@ -4,7 +4,7 @@ import Axios from "axios"
 const user = JSON.parse(localStorage.getItem("user"));
 export function GetDataList(searchKey, activePage, totalPerPage) {
   return async (dispatch) => {
-    let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP05`;
+    let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01`;
     if (searchKey) url += `&tenPhim=${searchKey}`;
     if (activePage) url += `&soTrang=${activePage}`;
     if (totalPerPage) url += `&soPhanTuTrenTrang=${totalPerPage}`;

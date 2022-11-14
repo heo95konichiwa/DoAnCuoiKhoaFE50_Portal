@@ -62,11 +62,9 @@ const InsertUpdateForm = (props) => {
             }
             if (document.getElementById('hinhAnh').files.length > 0) {
                 dispatch(UpdateDataImage(formData));
-                //console.log('co hinh anh', _data.hinhAnh);
             }
             else {
                 dispatch(UpdateData(_data));
-                //console.log('ko co hinh anh', _data.hinhAnh);
             }
             props.setRequestData(new Date());
         }

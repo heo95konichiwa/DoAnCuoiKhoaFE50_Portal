@@ -35,7 +35,7 @@ const InsertUpdateForm = (props) => {
     const handleUpdateData = (e) => {
         e.preventDefault();
         if (data.matKhau && data.hoTen) {
-            data.maNhom = 'GP05';
+            data.maNhom = 'GP01';
             //console.log(data);
             dispatch(UpdateUser(data));
             props.setRequestData(new Date());

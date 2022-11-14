@@ -1,6 +1,6 @@
 const initialState = {
     userList: null,
-    userInfo: { taiKhoan: '', matKhau: '', email: '', soDt: '', maNhom: 'GP05', maLoaiNguoiDung: 'QuanTri', hoTen: ''},
+    userInfo: { taiKhoan: '', matKhau: '', email: '', soDt: '', maNhom: 'GP01', maLoaiNguoiDung: 'QuanTri', hoTen: ''},
     userError: null,
   };
   

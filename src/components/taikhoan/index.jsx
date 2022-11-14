@@ -29,7 +29,7 @@ const QLDanhSachTaiKhoan = () => {
 
     useEffect(async () => {
         const fetchData = async () => {
-            let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?maNhom=GP05`;
+            let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?maNhom=GP01`;
             if (searchKey) url += `&tuKhoa=${searchKey}`;
             if (activePage) url += `&soTrang=${activePage}`;
             if (totalPerPage) url += `&soPhanTuTrenTrang=${totalPerPage}`;
@@ -69,7 +69,7 @@ const QLDanhSachTaiKhoan = () => {
                         <DanhSachTaiKhoan props={data} setRequestData={setRequestData} />
                         <div className="block-actions-bottom">
                             <div className="show-per-page">{t('global:label_global_show')}
-                                <select onChange={e => {setTotalPerPage(e.target.value); setCurrentPage(1)}}>
+                                <select onChange={e => { setTotalPerPage(e.target.value); setCurrentPage(1) }}>
                                     <option value="12">12</option>
                                     <option value="24">24</option>
                                     <option value="48">48</option>

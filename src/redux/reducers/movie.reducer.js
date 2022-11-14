@@ -1,6 +1,6 @@
 const initialState = {
   movieList: null,
-  movieInfo: { tenPhim: '', biDanh: '', trailer: '', hinhAnh: '', moTa: '', maNhom: 'GP05', ngayKhoiChieu: '', danhGia: 0 },
+  movieInfo: { tenPhim: '', biDanh: '', trailer: '', hinhAnh: '', moTa: '', maNhom: 'GP01', ngayKhoiChieu: '', danhGia: 0 },
   movieError: null,
 };
 

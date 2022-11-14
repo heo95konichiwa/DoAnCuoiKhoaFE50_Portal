@@ -7,7 +7,7 @@ export function LoginRequest(user, history) {
       if (res.status === 200 || res.status === 201) {
         const objdata = res.data;
         //console.log(objdata.maNhom);
-        if (objdata.maLoaiNguoiDung !== "QuanTri" || objdata.maNhom !== "GP05") {
+        if (objdata.maLoaiNguoiDung !== "KhachHang" || objdata.maNhom !== "GP01") {
           alert('Tài khoản của bạn không có quyền truy cập!');
         }
         else {
@@ -25,7 +25,7 @@ export function LoginRequest(user, history) {
 // Lấy danh sách user
 export function GetUserList(searchKey, activePage, totalPerPage) {
   return async (dispatch) => {
-    let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?maNhom=GP05`;
+    let url = `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDungPhanTrang?maNhom=GP01`;
     if (searchKey) url += `&tuKhoa=${searchKey}`;
     if (activePage) url += `&soTrang=${activePage}`;
     if (totalPerPage) url += `&soPhanTuTrenTrang=${totalPerPage}`;
@@ -63,7 +63,7 @@ export function GetUser(taiKhoan) {
     try {
       const res = await Axios({
         method: "GET",
-        url: `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP05&tuKhoa=${taiKhoan}`,
+        url: `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP01&tuKhoa=${taiKhoan}`,
       });
       if (res.status === 200 || res.status === 201) {
         dispatch(getUserSuccess(res.data[0]));

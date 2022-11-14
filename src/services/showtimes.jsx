@@ -5,7 +5,7 @@ export function getMovieListAdminShowtime() {
   return (dispatch) => {
     // call api
     Axios.get(
-      "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP05"
+      "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01"
     )
       .then((res) => {
         dispatch({
@@ -55,19 +55,19 @@ export function getLocationMovie(maHeThongRap) {
 }
 //lấy thông tin lịch chiếu phim
 export function getInforMovieShowtime(maPhim) {
-    return (dispatch) => {
-       Axios.get(
-        `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`
-      ).then(res => {
-        dispatch({
-          type: "GET-INFOR-MOVIE-SHOWTIME",
-          payload: res.data,
-        });
+  return (dispatch) => {
+    Axios.get(
+      `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`
+    ).then(res => {
+      dispatch({
+        type: "GET-INFOR-MOVIE-SHOWTIME",
+        payload: res.data,
+      });
+    })
+      .catch(err => {
+        console.log(err);
       })
-        .catch(err => {
-          console.log(err);
-        })
-    }
+  }
 }
 
 //tạo lịch chiếu
